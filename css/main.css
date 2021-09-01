@@ -1,0 +1,311 @@
+/*! general */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url(/img/background.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #FF4656;;
+    height: 100%;
+}
+
+/*! navbar */
+
+.nav{
+    background: #1F2326;
+    font-family: 'Montserrat';
+    font-weight: bold;
+}
+
+.navContainer{
+    max-width: 1800px;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.navLogoContainer{
+    display: flex;
+    margin-right: 80px;
+}
+
+.riotLogo{
+    margin-right: 39px;
+}
+
+.valorantLogo{
+    margin-left: 39px;
+}
+
+.line{
+    display: flex;
+    border-left: 2px;
+    width: 2px;
+    height: 40px;
+    background: white;
+}
+
+.navBtnContainer{
+    margin-right: auto;
+}
+
+.navBtn{
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    margin-right: 40px;
+}
+
+.accountContainer{
+    display: flex;
+    align-items: center;
+}
+
+.accountName{
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    margin-left: 20px;
+}
+
+/*! body */
+
+.bgTextAgents{
+    position: absolute;
+    top: 150px;
+    left: 220px;
+
+    font-family: 'Druk Wide Medium';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 95px;
+    letter-spacing: 0.1em;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 1);
+    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+
+    transform: rotate(90deg);
+    transform-origin: top left;
+}
+
+/*! agentsContainer */
+
+.agentsContainer{
+    display: flex;
+    justify-content: flex-start;
+
+    margin: 70px 0 0 350px;
+}
+
+.boxAgent{
+    position: relative;
+
+    width: 260px;
+    min-width: 260px;
+    max-width: 100%;
+}
+
+.boxAgent + .boxAgent{
+    margin-left: 150px;
+}
+
+.imgAgentContainer{
+    background-color: #1F2326;
+
+    width: 260px;
+    max-width: 260px;
+    height: 590px;
+
+    -webkit-clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%, 0 10%);
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%, 0 5%);
+}
+
+.imgAgent{
+    position: absolute;
+
+    width: 260px;
+    max-width: 260px;
+    height: 590px;
+    object-fit: contain;
+
+    transition: all ease-in-out .5s;
+}
+
+.boxAgent::before{
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+
+    width: 264px;
+    max-width: 264px;
+    height: 594px;
+    background-color: #1F2326;
+
+    -webkit-clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%, 0 10%);
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%, 0 5%);
+}
+
+.agentInfo{
+    position: absolute;
+    top: 50px;
+    left: 28px;
+
+    transform: rotate(90deg);
+    transform-origin: top left;
+}
+
+.agentCountry{
+    position: relative;
+    top: -20px;
+    left: 0;
+
+    font-family: 'Druk Wide Medium';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+    color: #FF4656;
+}
+
+.agentName{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    font-family: 'Druk Wide Medium';
+    font-size: 55px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    -webkit-text-stroke: 2px rgba(248, 248, 248, 1);
+    -webkit-text-fill-color: rgba(248, 248, 248, 0);
+
+    transition: all ease-in-out .7s;
+}
+
+.agentSpells{
+    position: absolute;
+    bottom: -20px;
+    left: 20px;
+
+    display: flex;
+    justify-content: space-between;
+
+    width: 270px;
+    padding: 15px 10px;
+
+    background-color: #1F2326;
+    border: 2px solid #F8F8F8;
+    box-sizing: border-box;
+
+    transition: all ease-in-out .5s;
+}
+
+.spell{
+    cursor: pointer;
+
+    width: 40px;
+    max-width: 40px;
+    height: 40px;
+    margin: 0 auto;
+
+    transition: all ease-in-out .5s;
+}
+
+/*! animation agents card */
+
+.imgAgent.active{
+    background-color: #F8F8F8;
+    transform: scale(1.07); 
+}
+
+.agentName.active{
+    -webkit-text-stroke: 2px rgba(31, 35, 38, 1);
+    -webkit-text-fill-color: rgba(31, 35, 38, 0);
+}
+
+.agentSpells.active{
+    background-color: #F8F8F8;
+    border: 2px solid #1F2326;
+}
+
+.agentSpells.active .spell{
+    filter: invert(88.5%);
+}
+
+/*! agent spells */
+/*TODO */
+
+.previveSkillsContainer{
+    display: flex;
+}
+
+.boxAgentSkills{
+    display: flex;
+    justify-content: space-between;
+
+    max-width: 400px;
+    width: 400px;
+    padding: 20px 40px;
+    margin: 50px 0 0 50px;
+
+    background-color: #1F2326;
+    
+    -webkit-clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%, 0 10%);
+    clip-path: polygon(5% 0, 100% 0, 100% 100%, 0 100%, 0 20%);
+}
+
+.descriptionSkillContainer{
+    color: #F8F8F8;
+    align-self: center;
+    max-width: 220px;   
+}
+
+.titleSkill{
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.typeSkill{
+    font-weight: 500;
+    font-size: 10px;
+}
+
+.textSkill{
+    font-family: 'Montserrat';
+}
+
+.titleSkill, .typeSkill{
+    font-family: 'Druk Wide Medium';
+}
+
+.typeSkill, .textSkill{
+    margin-top: 10px;
+}
+
+.imgSkillContainer{
+    position: relative;
+}
+
+.imgSpell{
+    width: 100px;
+    height: 100px;
+}
+
+.imgRedBlock{
+    position: absolute;
+    top: 20px;
+    left: -40px;
+
+    width: 110px;
+    height: 110px;
+
+    z-index: -1;
+}
+
